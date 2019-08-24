@@ -4,7 +4,7 @@ A Chessboard built using Vanilla JS.
 
 ## Demo (Work In Progress)
 
-Here is the current demo of what it looks like. So far I have successfully created the board, and given them the correct pieces in the correct positions. When you click on a chess piece, the Element Node is grabbed as well as gets the piece, as well as the current piece's position (row, column);
+Here is the current demo of what it looks like. So far I have successfully created the board, and given them the correct pieces in the correct positions. When you click on a chess piece, the Element Node is grabbed and gets the player, the piece, as well as the current piece's position (row, column);
 
 <br>
 
