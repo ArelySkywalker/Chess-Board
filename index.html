@@ -120,7 +120,8 @@
 			var node = event.target;
 			console.log(node);
 			var selectedPiece = node.getAttribute("data-piece");
-			console.log(selectedPiece);
+			var currentPosition = [node.getAttribute("data-row"), node.getAttribute("data-column")];
+			console.log(selectedPiece, currentPosition);
 
 		}, false);
 
