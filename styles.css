@@ -1,0 +1,25 @@
+.main-content {
+	margin: 0 auto;
+	max-width: 1500px;
+	padding: 20px 30px;
+	text-align: center;
+}
+
+#chessboard #board {
+	margin: 0 auto;
+	width: 800px;
+}
+
+#chessboard #board .row .cell {
+	border: 1px solid lightgray;
+	height: 93px;
+	width: 100px;
+}
+
+#chessboard #board .row:nth-child(even) .cell:nth-child(odd) {
+	background: #e6e6e6;
+}
+
+#chessboard #board .row:nth-child(odd) .cell:nth-child(even) {
+	background: #e6e6e6;
+}
