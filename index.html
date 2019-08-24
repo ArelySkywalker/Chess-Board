@@ -16,10 +16,18 @@
 				width: 800px;
 			}
 
-			#chessboard table tr td {
+			#chessboard table .row .cell {
 				border: 1px solid lightgray;
 				height: 93px;
 				width: 100px;
+			}
+
+			#chessboard table .row:nth-child(even) .cell:nth-child(odd) {
+				background: #e6e6e6;
+			}
+
+			#chessboard table .row:nth-child(odd) .cell:nth-child(even) {
+				background: #e6e6e6;
 			}
 		</style>
 	</head>
@@ -36,25 +44,47 @@
 	<script>
 		var chessBoard = document.getElementById("chessboard");
 		var table = document.createElement("table");
+		table.id = "board";
 
 		// Build the Board
 		for(var i = 0; i < 8; i++) {
 			// Create 8 rows and append it to the Table
 			var row = document.createElement("tr");
 			row.className = "row";
-			row.setAttribute("id", "row-" + (i+1));
+			row.id = "row-" + (i+1);
 			table.appendChild(row);
 			
 			for(var j = 0; j < 8; j++) {
 				// Create 8 cells for each Row and append it to the Row
 				var cell = document.createElement("td");
-				cell.className = "cell";
-				cell.setAttribute("id", "cell-" + (j+1));
+				cell.className = "row-" + (i+1) + " cell";
+				cell.id = "row-" + (i+1) + "_cell-" + (j+1);
 				row.appendChild(cell);
 			}
 		}
-
 		// Append our board to the ChessBoard div
 		document.getElementById("chessboard").appendChild(table);
+
+		// Traverse the DOM to add our chess pieces
+		var board = document.getElementById("board");
+		// Get Black Player's rows
+		var blackPlayerKingRow = board.firstChild;
+		var blackPlayerPawnRow = blackPlayerKingRow.nextSibling;
+		// Create our Pawns
+		for (var pawn of blackPlayerPawnRow.childNodes) {
+			pawn.innerHTML = "Pawn";
+		}
+
+		console.log(blackPlayerKingRow, blackPlayerPawnRow);
+
+		// Get White Player's rows
+		var whitePlayerKingRow = board.lastChild;
+		var whitePlayerPawnRow = whitePlayerKingRow.previousSibling;
+		// Create our Pawns
+		for (var pawn of whitePlayerPawnRow.childNodes) {
+			pawn.innerHTML = "Pawn";
+		}
+
+		console.log(whitePlayerKingRow, whitePlayerPawnRow);
 	</script>
 </html>
