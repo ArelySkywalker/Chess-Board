@@ -10,6 +10,17 @@
 				padding: 80px 30px;
 				text-align: center;
 			}
+
+			#chessboard table {
+				margin: 0 auto;
+				width: 800px;
+			}
+
+			#chessboard table tr td {
+				border: 1px solid lightgray;
+				height: 93px;
+				width: 100px;
+			}
 		</style>
 	</head>
 	<body>
@@ -26,6 +37,7 @@
 		var chessBoard = document.getElementById("chessboard");
 		var table = document.createElement("table");
 
+		// Build the Board
 		for(var i = 0; i < 8; i++) {
 			var row = document.createElement("tr");
 			row.className = "row";
