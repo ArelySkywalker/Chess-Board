@@ -16,6 +16,12 @@
 	width: 100px;
 }
 
+#chessboard #board .row .cell:hover {
+	border: 1px solid lightcoral;
+	cursor: pointer;
+	font-weight: bold;
+}
+
 #chessboard #board .row:nth-child(even) .cell:nth-child(odd) {
 	background: #e6e6e6;
 }
