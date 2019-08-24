@@ -8,7 +8,7 @@ Here is the current demo of what it looks like. So far I have successfully creat
 
 <br>
 
-T0DO:
+**T0DO:**
  - 1. Highlight where current selected piece can move to.
  - 2. Check if piece can take a piece from an opponent.
  - 3. Score tracker and Scoreboard.
