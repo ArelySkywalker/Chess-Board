@@ -29,3 +29,7 @@
 #chessboard #board .row:nth-child(odd) .cell:nth-child(even) {
 	background: #e6e6e6;
 }
+
+#chessboard #board .row .cell.available {
+	background: lightgreen !important;
+}

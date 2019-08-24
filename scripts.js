@@ -79,10 +79,45 @@
 
 		// Log the clicked element in the console
 		var node = event.target;
-		console.log(node);
+		node.classList.remove("available");
 		var selectedPlayer = node.getAttribute("data-player");
 		var selectedPiece = node.getAttribute("data-piece");
-		var currentPosition = [node.getAttribute("data-row"), node.getAttribute("data-column")];
+		var currentPosition = [Number(node.getAttribute("data-row")), Number(node.getAttribute("data-column"))];
+		
+		switch (selectedPiece) {
+			case 'Pawn':
+				if(selectedPlayer == 'black' && currentPosition[0] == 2) {
+					var availablePos = document.querySelector("[data-row='" + (currentPosition[0] + 1) + "'][data-column='" + (currentPosition[1]) + "']");
+					var availablePos2 = document.querySelector("[data-row='" + (currentPosition[0] + 2) + "'][data-column='" + (currentPosition[1]) + "']");
+
+					availablePos.classList.toggle("available");
+					availablePos2.classList.toggle("available");
+				}else if(selectedPlayer == 'white' && currentPosition[0] == 7){
+					var availablePos = document.querySelector("[data-row='" + (currentPosition[0] - 1) + "'][data-column='" + (currentPosition[1]) + "']");
+					var availablePos2 = document.querySelector("[data-row='" + (currentPosition[0] - 2) + "'][data-column='" + (currentPosition[1]) + "']");
+
+					availablePos.classList.toggle("available");
+					availablePos2.classList.toggle("available");
+				}
+			break;
+
+			case 'Rook':
+
+			break;
+
+			case 'Knight':
+			break;
+			
+			case 'Bishop':
+			break;
+
+			case 'Queen':
+			break;
+
+			case 'King':
+			break;
+		}
+
 		console.log(selectedPlayer, selectedPiece, currentPosition);
 
 	}, false);
