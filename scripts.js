@@ -40,12 +40,14 @@
 	for (var piece of blackPlayerKingRow.childNodes) {
 		piece.innerHTML = pieces[b];
 		piece.setAttribute("data-piece", pieces[b]);
+		piece.setAttribute("data-player", "black");
 		b++;
 	}
 	// Create our Pawns
 	for (var pawn of blackPlayerPawnRow.childNodes) {
 		pawn.innerHTML = "Pawn";
 		pawn.setAttribute("data-piece", "Pawn");
+		pawn.setAttribute("data-player", "black");
 	}
 
 	// Get White Player's rows
@@ -56,12 +58,14 @@
 	for (var piece of whitePlayerKingRow.childNodes) {
 		piece.innerHTML = pieces[w];
 		piece.setAttribute("data-piece", pieces[w]);
+		piece.setAttribute("data-player", "white");
 		w++;
 	}
 	// Create our Pawns
 	for (var pawn of whitePlayerPawnRow.childNodes) {
 		pawn.innerHTML = "Pawn";
 		pawn.setAttribute("data-piece", "Pawn");
+		pawn.setAttribute("data-player", "white");
 	}
 
 	// Event Listeners
@@ -76,8 +80,9 @@
 		// Log the clicked element in the console
 		var node = event.target;
 		console.log(node);
+		var selectedPlayer = node.getAttribute("data-player");
 		var selectedPiece = node.getAttribute("data-piece");
 		var currentPosition = [node.getAttribute("data-row"), node.getAttribute("data-column")];
-		console.log(selectedPiece, currentPosition);
+		console.log(selectedPlayer, selectedPiece, currentPosition);
 
 	}, false);
