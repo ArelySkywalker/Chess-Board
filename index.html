@@ -70,21 +70,35 @@
 		// Get Black Player's rows
 		var blackPlayerKingRow = board.firstChild;
 		var blackPlayerPawnRow = blackPlayerKingRow.nextSibling;
+
+
+		// Array of non-Pawn pieces, ORDER MATTERS!
+		var pieces = ['Rook', 'Knight', 'Bishop', 'Queen', 'King', 'Bishop', 'Knight', 'Rook'];
+
+		// Create our Pieces
+		let b = 0;
+		for (var piece of blackPlayerKingRow.childNodes) {
+			piece.innerHTML = pieces[b];
+			b++;
+		}
 		// Create our Pawns
 		for (var pawn of blackPlayerPawnRow.childNodes) {
 			pawn.innerHTML = "Pawn";
 		}
 
-		console.log(blackPlayerKingRow, blackPlayerPawnRow);
-
 		// Get White Player's rows
 		var whitePlayerKingRow = board.lastChild;
 		var whitePlayerPawnRow = whitePlayerKingRow.previousSibling;
+		// Create our Pieces
+		let w = 0;
+		for (var piece of whitePlayerKingRow.childNodes) {
+			piece.innerHTML = pieces[w];
+			w++;
+		}
 		// Create our Pawns
 		for (var pawn of whitePlayerPawnRow.childNodes) {
 			pawn.innerHTML = "Pawn";
 		}
 
-		console.log(whitePlayerKingRow, whitePlayerPawnRow);
 	</script>
 </html>
